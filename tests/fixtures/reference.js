@@ -1,0 +1,2 @@
+const evalReference = eval;
+evalReference();
