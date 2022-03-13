@@ -1,14 +1,13 @@
 import { Compilation, Compiler, WebpackError } from "webpack";
-import type { BaseNode, ConditionalExpression, Expression, Identifier, Node, Statement, VariableDeclarator } from 'estree';
+import type { Statement } from 'estree';
 import { variableDeclarationCrawler } from "./crawlers";
 
+// TODO: Setup logging system using webpack provided logger.
 export default class EvalWebpackPlugin {
-    private logger = null;
     private name = 'EvalWebpackPlugin';
     private errors: WebpackError[] = [];
 
     apply(compiler: Compiler) {
-        //this.logger = compiler.infrastructureLogger(this.name);
         compiler.hooks.beforeRun.tap(this.name, () => {
             this.errors = [];
         });
@@ -36,7 +35,7 @@ export default class EvalWebpackPlugin {
             });
         });
     }
-
+    
     createError(file: string, loc: any): void {
         const error = new WebpackError('Eval expression found');
         error.file = file;

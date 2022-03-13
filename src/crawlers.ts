@@ -1,4 +1,4 @@
-import { BaseNode, ConditionalExpression, Expression, Identifier, SourceLocation, VariableDeclarator } from "estree";
+import type { ConditionalExpression, Expression, Identifier, SourceLocation, VariableDeclarator } from "estree";
 
 type crawler<T> = (expression: T) => SourceLocation[];
 
