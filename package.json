@@ -3,10 +3,10 @@
   "version": "0.0.1",
   "description": "Detect eval calls on your builds with webpack",
   "files": [
-    "dist/index.js"
+    "lib/*"
   ],
   "scripts": {
-    "build": "tsc --outDir lib",
+    "build": "tsc --outDir lib --project ./tsconfig.build.json",
     "test": "jest",
     "lint": "eslint"
   },
