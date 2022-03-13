@@ -1,7 +1,7 @@
 import * as path from 'path';
 import { tmpdir } from 'os';
 import { MultiCompiler, MultiStats, webpack } from "webpack";
-import EvalWebpackPlugin from "..";
+import EvalWebpackPlugin from "../src/index";
 
 export const asyncRun = (compiler: MultiCompiler) => new Promise<MultiStats | undefined>((resolve, reject) => {
     compiler.run((err, stats) => {
